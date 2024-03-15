@@ -5,13 +5,12 @@ console.log( a );
 const BubbleSort = ( a ) => {
     let i, j, aux;
 
-    for( i = 0; i < a.length; i++){
-        for( j = 0; j < a.length; j++ ){
+    for( i = 0; i < a.length - 1; i++){
+        for( j = 0; j < a.length - 1; j++ ){
             if( a[ j ] > a[ j +  1]){
                 aux = a[ j ];
                 a[ j ] = a[ j + 1 ];
                 a[ j + 1 ] = aux;
-                console.log( a );
             }
 
         }
@@ -23,10 +22,12 @@ const BubbleSort = ( a ) => {
 const ShakeSort = ( a ) => {
     let i, j, aux;
     let isSwaped = true;
+    let start = 0;
+    let end = a.length - 1;
 
     while( isSwaped ){
         isSwaped = false;
-        for( i = 0; i < a.length; i++ ){
+        for( i = start; i < end; i++ ){
             if( a[ i ] > a[ i + 1 ]){
                 aux= a[ i ];
                 a[ i ] = a[ i + 1 ];
@@ -39,8 +40,8 @@ const ShakeSort = ( a ) => {
         if( !isSwaped ) break;
 
         isSwaped = false;
-
-        for( j = a.length; j > 0; j-- ){
+        end--;
+        for( j = end; j > start; j-- ){
             if( a[ j ] < a[ j - 1 ]){
                 aux= a[ j ];
                 a[ j ] = a[ j - 1 ];
@@ -49,6 +50,7 @@ const ShakeSort = ( a ) => {
                 isSwaped = true;
             }
         }
+        start++;
     }
     return a;
 }
