@@ -1,4 +1,4 @@
-class Number {
+class TDANumber {
     value;
     frecuency;
 
@@ -45,7 +45,7 @@ const BubbleSort = ( a ) => {
 }
 
 const CountFrecuency = ( a ) => {
- let i, j, aux =[ new Number( a[ 0 ]) ];
+ let i, j, aux =[ new TDANumber( a[ 0 ]) ];
  let push;
 
  for( i = 1; i < a.length; i++ ){
@@ -56,7 +56,7 @@ const CountFrecuency = ( a ) => {
             push = false;
         }
     }
-    if( push )  aux[ aux.length ] = new Number( a[ i ] );
+    if( push )  aux[ aux.length ] = new TDANumber( a[ i ] );
  }
 
  return aux;
