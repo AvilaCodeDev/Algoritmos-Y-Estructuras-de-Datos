@@ -1,21 +1,21 @@
 const a = [0,2,1,2,0];
 
-console.log( a );
+// console.log( a );
 
 const BubbleSort = ( a ) => {
     let i, j, aux;
-
+    console.log("- -", a );
     for( i = 0; i < a.length - 1; i++){
-        for( j = 0; j < a.length - 1; j++ ){
+        for( j = 0; j < a.length - i - 1; j++ ){
             if( a[ j ] > a[ j +  1]){
                 aux = a[ j ];
                 a[ j ] = a[ j + 1 ];
                 a[ j + 1 ] = aux;
             }
-
+            console.log( i, j, a );
         }
     }
-
+    console.log( a );
     return a;
 }
 
@@ -55,6 +55,6 @@ const ShakeSort = ( a ) => {
     return a;
 }
 
-console.log( BubbleSort( a ) );
+BubbleSort( a );
 
-console.log( ShakeSort( a ) );
+// console.log( ShakeSort( a ) );
