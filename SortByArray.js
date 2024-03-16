@@ -92,19 +92,20 @@ class SortByArray{
         let c = [];
         let count = 0;
 
-        for( i = 0 ; i < b.length - 1 ; i++ ){
-            for( j = 0 + i; j < a.length - 1; j++ ){
-                for( k = 0; k < a.length - 1; k++ ){
-                    console.log( `${ j } , ${ k }` );
+        for( i = b.length - 1 ; i >= 0 ; i-- ){
+            for( j = 0  ; j < a.length - 1; j++ ){
+                for( k = 0 ; k < a.length - 1; k++ ){
+                    console.log( a[k+1] , b[ i ] );
                     if( a[ k + 1 ] == b[ i ] ){
                         aux = a[ k ];
                         a[ k ] = a[ k + 1 ];
                         a[ k + 1 ] = aux;
-
+                        console.log( a );
                     }
                     count++;
                 }
             }
+            // if( i <= 0) break;
         }
         // for( i = 0; i < a.length; i++ ){
         //     for( j = 0; j < a[i].getFrecuency(); j++ ){
